@@ -43,11 +43,11 @@ function App() {
         todoTaskRef.current.value = null;
     };
 
-    const editTodo = (id) => {
+    const editTodo = (id, newTask) => {
         const newTodos = [...todos];
         //find the specific todo
         const todo = newTodos.find((todo) => todo.id === id);
-        todo.task = todoTaskRef.current.value;
+        todo.task = newTask;
         setTodos(newTodos);
     }
 
