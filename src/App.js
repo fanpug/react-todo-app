@@ -1,8 +1,8 @@
 import React, {useState, useRef, useEffect} from 'react';
 import TodoList from './components/TodoList';
 import Navbar from './components/Navbar';
+import AboutModal from './components/AboutModal';
 import {v4 as uuidv4} from 'uuid';
-
 const KEY = "todoApp.todos";
 
 function App() {
@@ -16,8 +16,15 @@ function App() {
     useEffect(() => {
         localStorage.setItem(KEY, JSON.stringify(todos));
     }, [todos]);
-
+    
     const todoTaskRef = useRef();
+
+    //create the variable that will track the about modal
+    const [showModal, setShowModal] = useState(false);
+
+    const toggleModal = () => {
+        setShowModal(!showModal);
+    }
 
     const toggleTodo = (id) => {
         const newTodos = [...todos];
@@ -61,7 +68,7 @@ function App() {
 
     return (
         <>
-            <Navbar />
+            <Navbar toggleModal={toggleModal} />
             <main className='flex flex-col items-center justify-center'>
                 <div className='flex flex-col items-center mt-5 text-xl sm:flex-row '>
                     <input type="text" ref={todoTaskRef} placeholder='e.g., Do the laundry' className="p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"></input>
@@ -78,6 +85,7 @@ function App() {
                 </div>
                 
             </main>
+            <AboutModal visible={showModal} toggleModal={toggleModal} />
         </>
     );
 }
