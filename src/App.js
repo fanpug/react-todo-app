@@ -63,15 +63,17 @@ function App() {
         <>
             <Navbar />
             <main className='flex flex-col items-center justify-center'>
-                <div className='flex items-center w-96 mt-5 text-xl'>
-                    <input type="text" ref={todoTaskRef} placeholder='eg: Do the laundry' className="p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"></input>
-                    <button className='ml-8 text-3xl motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition' onClick={handleTodoAdd}>➕</button>
-                    <button className='ml-2 text-3xl motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition' onClick={handleClearCompleted}>🗑️</button>
+                <div className='flex flex-col items-center mt-5 text-xl sm:flex-row '>
+                    <input type="text" ref={todoTaskRef} placeholder='e.g., Do the laundry' className="p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"></input>
+                    <div className='flex w-full justify-evenly my-3'>
+                        <button className='text-3xl sm:ml-5 motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition hover:drop-shadow-xl' onClick={handleTodoAdd}>➕</button>
+                        <button className='text-3xl sm:ml-3 motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition hover:drop-shadow-xl' onClick={handleClearCompleted}>🗑️</button>
+                    </div>
                 </div>
                 
-                <div>You have <b>{todos.filter((todo) => !todo.completed).length}</b> tasks pending</div>
+                <div className='text-xl sm:mt-3'>You have <b>{todos.filter((todo) => !todo.completed).length}</b> tasks pending</div>
 
-                <div className='w-96 mt-5 text-xl break-all'>
+                <div className='max-w-xs mt-5 text-xl sm:max-w-xl lg:w-1/2'>
                     <TodoList todos={todos} toggleTodo={toggleTodo} editTodo={editTodo} deleteTodo={deleteTodo} />
                 </div>
                 

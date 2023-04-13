@@ -34,15 +34,15 @@ export default function TodoItem({todo, toggleTodo, editTodo, deleteTodo}) {
       {!editing ?
         <>
           <input type='checkbox' className='w-6 h-6 mr-1 translate-y-0.5' checked={completed} onChange={handleTodoClick} />
-          <span className={completed ? 'line-through' : '' }>{task}</span>
-          <button className={completed ? 'hidden' : 'ml-2 mr-1 motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition'} onClick={isEditing}>✏️</button>
-          <button className={completed ? 'hidden' : 'motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition'} onClick={handleDelete}>❌</button>
+          <span className={completed ? 'line-through break-normal' : 'break-normal' }>{task}</span>
+          <button className={completed ? 'hidden' : 'ml-2 mr-1 motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition hover:drop-shadow-xl'} onClick={isEditing}>✏️</button>
+          <button className={completed ? 'hidden' : 'motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition hover:drop-shadow-xl'} onClick={handleDelete}>❌</button>
         </>
       : 
         <>
           <input type="text" ref={editTaskRef} className="p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"></input>
-          <button className={completed ? 'hidden' : 'ml-2 mr-1 motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition'} onClick={handleEdit}>✔️</button>
-          <button className={completed ? 'hidden' : 'motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition'} onClick={isEditing}>✖️</button>
+          <button className={completed ? 'hidden' : 'ml-2 mr-1 motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition hover:drop-shadow-xl'} onClick={handleEdit}>✔️</button>
+          <button className={completed ? 'hidden' : 'motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition hover:drop-shadow-xl'} onClick={isEditing}>✖️</button>
         </>
       }
       
