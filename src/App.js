@@ -7,16 +7,12 @@ const KEY = "todoApp.todos";
 
 function App() {
     //create the todos array with useState
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState(() => {
+        //retrieve from local storage any todos or start from a new array
+        return JSON.parse(localStorage.getItem(KEY)) || []
+    });
 
-    useEffect(() => {
-        //search for locally stored todos
-        const storedTodos = JSON.parse(localStorage.getItem(KEY));
-        if(storedTodos) {
-            setTodos(storedTodos);
-        }
-    }, []);
-
+    //everytime there are changes in the todo array, save them to local storage
     useEffect(() => {
         localStorage.setItem(KEY, JSON.stringify(todos));
     }, [todos]);
