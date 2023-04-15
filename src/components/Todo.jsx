@@ -26,6 +26,12 @@ export default function Todo() {
         setTodos(newTodos);
     };
 
+    const handleSubmit = (e) => {
+        //prevent refreshing the page when submiting
+        e.preventDefault();
+        handleTodoAdd();
+    }
+
     const handleTodoAdd = () => {
         //get the value that is on the input and check if it's not an empty string
         const task = todoTaskRef.current.value;
@@ -60,16 +66,16 @@ export default function Todo() {
 
     return (
         <>
-            <div
-                id="todo-input"
-                className="flex flex-col items-center mt-5 text-xl sm:flex-row "
-            >
-                <input
-                    type="text"
-                    ref={todoTaskRef}
-                    placeholder="e.g., Do the laundry"
-                    className="p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-                ></input>
+            <div className="flex flex-col items-center mt-5 text-xl sm:flex-row">
+                <form id="todo-form" onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        ref={todoTaskRef}
+                        placeholder="e.g., Do the laundry"
+                        className="p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                        autoComplete="off"
+                    ></input>
+                </form>
                 <div className="flex w-full justify-evenly my-3">
                     <button
                         className="text-3xl sm:ml-5 motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition hover:drop-shadow-xl"
