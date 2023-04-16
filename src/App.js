@@ -5,6 +5,7 @@ import {
     signInAnonymously,
     onAuthStateChanged,
     signOut,
+    deleteUser,
 } from "firebase/auth";
 import { auth } from "./firebase/firebase";
 import { BsPersonCircle, BsGoogle } from "react-icons/bs"
@@ -71,6 +72,14 @@ function App() {
     }
 
     const handleLogout = () => {
+        if (currentUser.isAnonymous) {
+            deleteUser(currentUser).then(() => {
+                // User deleted.
+            }).catch((error) => {
+                console.error(error.code);
+                alert(error.message);
+            });
+        }
         signOut(auth).then(() => {
             setCurrentUser(null);
             //console.log("User signed out")
