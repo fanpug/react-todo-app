@@ -1,17 +1,20 @@
 # React To-Do App
-Este repositorio contiene una aplicación To-Do ("por hacer") sencilla construida con React y Tailwind CSS. La aplicación permite a los usuarios crear, leer, actualizar y eliminar tareas, lo que les ayuda a mantenerse organizados y gestionar sus actividades diarias de manera eficiente.
+Bienvenido a este notable repositorio que presenta una aplicación To-Do (también conocida como lista de tareas o "por hacer") creada con create-react-app. Diseñada para simplificar y optimizar la gestión de tareas, esta aplicación permite a los usuarios crear, leer, actualizar y eliminar tareas con facilidad. Mantente organizado y eficiente mientras manejas tus actividades diarias sin esfuerzo con esta intuitiva y confiable aplicación.
 
 
 ## Características
-* Añadir nuevas tareas
-* Marcar tareas como completadas
-* Editar tareas
-* Borrar tareas
 * Diseño responsivo
+* Iniciar sesión con una cuenta de Google o de manera anónima
+* Añadir nuevas tareas
+* Marcar tareas completadas
+* Editar tareas
+* Borrar tareas de manera individual
+* Borrar todas las tareas completadas
 
 
 ## Prerequisitos
-Para ejecutar la aplicación localmente se deben de tener instalados **npm** y **Node.js**, y opcionalmente **git**.
+* Node.js
+* ***Opcional***: git
 
 
 ## Clonando el repositorio
@@ -42,6 +45,7 @@ Construye la app para producción, creando (o sobreescribiendo) la carpeta `buil
 * JavaScript
 * ReactJS
 * TailwindCSS
+* Firebase
 
 
 ## Autor
@@ -53,4 +57,6 @@ This project is open source and available under the MIT License. Feel free to us
 
 
 ## Agradecimientos
+Esta aplicación de lista de tareas se construyó sobre la fundación del [tutorial de React de Carlos Azaustre](https://youtu.be/EMk6nom1aS4) y fue ampliada con características y funcionalidades adicionales. El repositorio original del código del tutorial puede encontrarse [aquí](https://github.com/carlosazaustre/react-30-minutes).
+
 Gracias a las personas de PurpleBooth por su plantilla/referencia de como debe ser el [formato de un readme](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
