@@ -13,7 +13,7 @@ export default function DropdownMenu({ currentUser, handleLogout, handleDisplayN
         <>
             <div className='hidden sm:block relative'>
                 <button onClick={handleToggle} className="z-10 relative block h-11 w-11 rounded-full shadow hover:shadow-md overflow-hidden border-2 border-fuchsia-600 focus:border-fuchsia-700 object-cover">
-                    <img className='h-full w-full object-cover' src='https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg' alt="User's avatar" />
+                    <img className='h-full w-full object-cover' src={currentUser.photoURL} alt="User's avatar" referrerPolicy="no-referrer" />
                 </button>
 
                 {drpMenuState ?
