@@ -58,6 +58,26 @@ export async function fetchTodos(uid) {
   }
 }
 
+export async function fetchAnonTodos() {
+  const todos = [];
+  try {
+    const collectionRef = collection(db, 'todos');
+    const qry = query(collectionRef, where('isAnon', '==', true));
+    const querySnapshot = await getDocs(qry);
+    
+    //give each todo their docId in the app
+    querySnapshot.forEach((docmnt) => {
+      const todo = { ...docmnt.data() };
+      todo.docId = docmnt.id;
+      todos.push(todo);
+    });
+    
+    return todos;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 export async function updateTodo(docId, todo) {
   try {
     await setDoc(doc(db, 'todos', docId), todo);

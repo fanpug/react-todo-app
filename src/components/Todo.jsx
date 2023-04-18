@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import TodoList from "./TodoList";
 import { v4 as uuidv4 } from "uuid";
-import { insertNewTodo, fetchTodos, updateTodo, deleteTodo } from "../firebase/firebase";
+import { insertNewTodo, fetchTodos, fetchAnonTodos, updateTodo, deleteTodo } from "../firebase/firebase";
 
 export default function Todo({currentUser}) {
     //create the todos array with useState
@@ -10,7 +10,12 @@ export default function Todo({currentUser}) {
     //run when component is initialized
     useEffect(() => {
         const retrieveUserTodos = async () => {
-            const todosList = await fetchTodos(currentUser.uid);
+            let todosList = [];
+            if (currentUser.isAnonymous) {
+                todosList = await fetchAnonTodos();
+            } else {
+                todosList = await fetchTodos(currentUser.uid);
+            }
 
             setTodos([...todosList]);
         }
