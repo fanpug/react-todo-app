@@ -8,6 +8,7 @@ import {
     deleteUser,
 } from "firebase/auth";
 import { auth } from "./firebase/firebase";
+
 import { BsPersonCircle, BsGoogle } from "react-icons/bs"
 
 import Navbar from "./components/Navbar";
@@ -37,7 +38,6 @@ function App() {
                     user.displayName = "Anonymous";
                     user.photoURL = "https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg";
                 }
-                console.log(user);
                 setCurrentUser(user);
             } else {
                 setCurrentState(3);
@@ -111,7 +111,7 @@ function App() {
                     </> 
                 :
                     <>                        
-                        <Todo />
+                        <Todo currentUser={currentUser} />
                     </>
                 }
             </main>
