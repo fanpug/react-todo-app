@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AboutModal from "./AboutModal";
+import InstructionsModal from "./InstructionsModal";
 import DropdownMenu from './DropdownMenu';
 
 import { IoLogOut } from 'react-icons/io5';
@@ -54,8 +55,9 @@ export default function Navbar({currentUser, state, handleLogout}) {
         :
           null
         }
-        
-        {/*Button shows on mobile and desktop*/}
+
+        {/*Buttons shows on mobile and desktop*/}
+        <InstructionsModal />
         <AboutModal />
         
         {/*Button only shows on desktop and if user is logged in*/}
