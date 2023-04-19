@@ -33,10 +33,13 @@ export default function AboutModal() {
               This To-Do application is based on <a className='font-medium text-blue-600 underline hover:no-underline' href='https://youtu.be/EMk6nom1aS4' target='_blank' rel="noreferrer">Carlos Azaustre's React Tutorial</a> (the GitHub repository for it can be found <a className='font-medium text-blue-600 underline hover:no-underline' href='https://github.com/carlosazaustre/react-30-minutes' target='_blank' rel="noreferrer">here</a>), serving as the initial foundation.
             </p>
             <p className='mt-2'>
-              I have since expanded and customized the code to add additional features and functionalities. It now includes my own modifications and improvements, making it a unique and enhanced version of the original tutorial code.
+              I expanded and customized the code to add additional features and functionalities. It now includes my own modifications and improvements, making it a unique and enhanced version of the original tutorial code.
             </p>
             <p className='mt-2'>
-              I undertook this project as a way to familiarize myself with React Hooks and TailwindCSS, and I may also add a database support (probably Firebase) in the future to further enhance the app's capabilities.
+              I undertook this project as a way to familiarize myself with React Hooks, TailwindCSS, and Firebase's services.
+            </p>
+            <p className='mt-2'>
+              In the future I would like to migrate from create-react-app to Vite to further optimize the app's functionality, refactor some of the components and their functions and maybe choose another color palette.
             </p>
           </div>
         </div>

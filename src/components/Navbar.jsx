@@ -29,10 +29,10 @@ export default function Navbar({currentUser, state, handleLogout}) {
   }
 
   return (
-    <header className='bg-red-400 sm:flex sm:justify-between sm:px-6 sm:py-3 sm:items-center'>
+    <header className='bg-red-400 bg-opacity-0 sm:flex sm:justify-between sm:px-40 sm:py-3 sm:items-center'>
       <div className='flex items-center justify-between px-4 py-3 sm:p-0'>
-        <div>
-          LOGO
+        <div className='text-xl sm:text-4xl font-bold font-eczar'>
+          <a href='https://github.com/fanpug/react-todo-app' target='_blank' rel="noreferrer">✨To-Do App✨</a>
         </div>
         
         <div className='sm:hidden'>
@@ -50,7 +50,7 @@ export default function Navbar({currentUser, state, handleLogout}) {
       <div className={`${menuClass} px-2 py-2 text-center sm:p-0 sm:flex sm:items-center`}>
         {/*Only shows on mobile and if user is logged in*/}
         {state === 2 ?
-          <span className='sm:hidden block mt-1 w-full px-2 py-3 font-bold text-slate-100 capitalize rounded ease-linear transition-all duration-150'>{handleDisplayName(currentUser.displayName)}</span>
+          <span className='bg-black bg-opacity-20 sm:hidden block mt-1 w-full px-2 py-3 font-bold text-slate-100 capitalize rounded ease-linear transition-all duration-150'>{handleDisplayName(currentUser.displayName)}</span>
         :
           null
         }
