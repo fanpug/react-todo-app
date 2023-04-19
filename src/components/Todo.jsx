@@ -63,10 +63,10 @@ export default function Todo({currentUser}) {
         const todo = newTodos.find((todo) => todo.docId === docId);
         todo.task = newTask;
 
+        setTodos(newTodos);
+
         //update todo task in database
         await updateTodo(docId, todo);
-
-        setTodos(newTodos);
     };
 
     const handleToggleCompletion = async (docId) => {
@@ -75,27 +75,35 @@ export default function Todo({currentUser}) {
         const todo = newTodos.find((todo) => todo.docId === docId);
         todo.completed = !todo.completed;
         
+        setTodos(newTodos);
+
         //update todo task in database
         await updateTodo(docId, todo);
-
-        setTodos(newTodos);
     };
 
     const handleDeleteTodo = async (docId) => {
         //make a new array that doesn't have that one todo
         const newTodos = todos.filter((todo) => todo.docId !== docId);
+        
+        setTodos(newTodos);
 
         //delete todo from the database
         await deleteTodo(docId);
-
-        setTodos(newTodos);
     };
 
-    //TODO: Update this function
     const handleClearCompleted = () => {
+        const completedTodos = todos.filter((todo) => todo.completed);
         //make a new array that gets rid of every todo that is completed
         const newTodos = todos.filter((todo) => !todo.completed);
+        
         setTodos(newTodos);
+
+        if (completedTodos) {
+            completedTodos.forEach(async (todo) => {
+                //delete todo from the database
+                await deleteTodo(todo.docId);
+            });
+        }
     };
 
     return (
