@@ -32,8 +32,10 @@ export default function Navbar({currentUser, state, handleLogout}) {
   return (
     <header className='bg-red-400 bg-opacity-0 sm:flex sm:justify-between sm:px-40 sm:py-3 sm:items-center'>
       <div className='flex items-center justify-between px-4 py-3 sm:p-0'>
-        <div className='text-xl sm:text-4xl font-bold font-eczar'>
-          <a href='https://github.com/fanpug/react-todo-app' target='_blank' rel="noreferrer">✨To-Do App✨</a>
+        <div className='flex justify-center items-center text-xl sm:text-4xl'>
+          <a href='https://github.com/fanpug/react-todo-app' target='_blank' rel="noreferrer">
+            ✨<span className='bg-cover bg-clip-text bg-center uppercase text-transparent text-center font-extrabold tracking-wide antialiased' style={{ backgroundImage: "url(https://media.giphy.com/media/xTiTniuHdUjpOlNo1q/source.gif)" }}>To-Do App</span>✨
+          </a>
         </div>
         
         <div className='sm:hidden'>

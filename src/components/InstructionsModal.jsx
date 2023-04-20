@@ -31,16 +31,16 @@ export default function AboutModal() {
             <h2 className='font-bold text-3xl underline mb-3 text-center'>Instructions</h2>
             <ul>
               <li className='mb-1'>
-                ➕ - Add a to-do
+                ➕ - Add a task
               </li>
               <li className='mb-1'>
-                🗑️ - Delete all completed to-do's
+                🗑️ - Delete all completed tasks
               </li>
               <li className='mb-1'>
-                ✏️ - Edit a specific to-do
+                ✏️ - Edit a specific task
               </li>
               <li className='mb-1'>
-                ❌ - Delete a specific to-do
+                ❌ - Delete a specific task
               </li>
             </ul>
           </div>

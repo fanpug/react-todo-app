@@ -96,7 +96,13 @@ function App() {
 
     if(state === 3) {
         loginStatus = <>
-                        <button className={`${buttonClasses} mt-10`} onClick={handleGoogleAuth}><BsGoogle className="inline mr-4" />Sign in with Google</button>
+                        <h1 className="mt-5 flex flex-col justify-center items-center bg-cover bg-clip-text bg-center uppercase text-transparent text-center text-4xl sm:text-7xl font-extrabold tracking-wide antialiased" style={{ backgroundImage: "url(https://media.giphy.com/media/xTiTniuHdUjpOlNo1q/source.gif)" }}>Welcome to my <span>To-Do App!</span></h1>
+                        <p className="mt-4 flex flex-col justify-center items-center max-w-xs sm:max-w-xl text-lg sm:text-xl text-center font-extrabold font-eczar">
+                            <span>Unleash your productivity with this robust task management tool, and conquer your tasks effortlessly by taking action now!</span>
+                            <span className="mt-6 text-base sm:text-lg font-semibold">Sign in with your Google account for a personalized experience:</span>
+                        </p>
+                        <button className={`${buttonClasses} mt-4`} onClick={handleGoogleAuth}><BsGoogle className="inline mr-4" />Sign in with Google</button>
+                        <p className="mt-10 text-base sm:text-lg font-semibold text-[#452F2C] font-eczar">or simply try it out as an anonymous user:</p>
                         <button className={`${buttonClasses} mt-4`} onClick={handleAnonAuth}><BsPersonCircle className="inline mr-4" />Sign in Anonymously</button>
                     </>;
     }
