@@ -120,13 +120,13 @@ export default function Todo({currentUser}) {
                 </form>
                 <div className="flex w-full justify-evenly my-3">
                     <button
-                        className="text-3xl sm:ml-5 motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition hover:drop-shadow-xl"
+                        className="text-3xl sm:ml-5 motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition hover:drop-shadow-xl sm:motion-safe:active:scale-150"
                         onClick={handleCreateTodo}
                     >
                         ➕
                     </button>
                     <button
-                        className="text-3xl sm:ml-3 motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition hover:drop-shadow-xl"
+                        className="text-3xl sm:ml-3 motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition hover:drop-shadow-xl sm:motion-safe:active:scale-150"
                         onClick={handleClearCompleted}
                     >
                         🗑️

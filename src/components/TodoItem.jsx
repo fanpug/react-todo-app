@@ -33,7 +33,7 @@ export default function TodoItem({todo, handleToggleCompletion, handleUpdateTask
   };
 
   return (
-    <li key={docId} className='mb-1'>
+    <li key={docId} className='mb-2'>
       {/*if we're NOT editing then display the normal todo, if we ARE then show the input field to edit it*/}
       {!editing ?
         <>
@@ -49,7 +49,7 @@ export default function TodoItem({todo, handleToggleCompletion, handleUpdateTask
               type="text" 
               value={newTask} 
               onChange={e => setNewTask(e.target.value)} 
-              className="w-10/12 p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500">
+              className="w-9/12 sm:w-10/12 p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500">
             </input>
           </form>
           <button className={completed ? 'hidden' : 'ml-2 mr-1 motion-safe:hover:scale-125 motion-safe:hover:-translate-y-0.5 motion-safe:transition hover:drop-shadow-xl'} onClick={handleEdit}>✔️</button>
