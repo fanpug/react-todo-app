@@ -10,6 +10,8 @@ import {
   setDoc,
   deleteDoc,
   doc,
+  orderBy,
+  serverTimestamp,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -31,6 +33,7 @@ export const db = getFirestore(app);
 // Firestore CRUD functions
 export async function insertNewTodo(todo) {
   try {
+    todo.createdAt = serverTimestamp();
     const docRef = await addDoc(collection(db, 'todos'), todo);
     return docRef.id.toString();
   } catch (error) {
@@ -42,7 +45,7 @@ export async function fetchTodos(uid) {
   const todos = [];
   try {
     const collectionRef = collection(db, 'todos');
-    const qry = query(collectionRef, where('uid', '==', uid));
+    const qry = query(collectionRef, where('uid', '==', uid), orderBy('createdAt'));
     const querySnapshot = await getDocs(qry);
     
     //give each todo their docId in the app
@@ -62,7 +65,7 @@ export async function fetchAnonTodos() {
   const todos = [];
   try {
     const collectionRef = collection(db, 'todos');
-    const qry = query(collectionRef, where('isAnon', '==', true));
+    const qry = query(collectionRef, where('isAnon', '==', true), orderBy('createdAt'));
     const querySnapshot = await getDocs(qry);
     
     //give each todo their docId in the app
